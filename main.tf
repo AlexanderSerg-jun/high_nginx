@@ -13,6 +13,7 @@ provider "yandex" {
     zone = var.access["zone"]
   
 }
-resource "yandex_compute_instance" "" {
+// виртуальная машина с nginx
+resource "yandex_compute_instance" "balanser" {
   
 }
