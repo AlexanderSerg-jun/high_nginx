@@ -15,5 +15,18 @@ provider "yandex" {
 }
 // виртуальная машина с nginx
 resource "yandex_compute_instance" "balanser" {
-  
+  name="balance"
+  platform = "standart-v1"
+  hostname = "balance"
+  resources{
+    core = 2
+    memory = 2
+  }
+  boot_disk{
+    initialize_params{
+      image_id ="fd8p7vi5c5bbs2s5i67s"
+      size = 10
+      type = "network-ssd"
+    }
+  }
 }
