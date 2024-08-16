@@ -20,7 +20,7 @@ resource "yandex_compute_instance" "balanser" {
   hostname = "balance"
   resources{
     core = 2
-    memory = 2
+    memory = 4
   }
   boot_disk{
     initialize_params{
@@ -28,5 +28,12 @@ resource "yandex_compute_instance" "balanser" {
       size = 10
       type = "network-ssd"
     }
+  }
+  network_interface{
+    subnet_id = yandex_vpc_subnet.balance-subnet-1.cloud_id
+    nat = true
+  }
+  network_interface{
+    subnet_id = yandex_vpc_subnet.
   }
 }
