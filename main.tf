@@ -11,7 +11,7 @@ locals {
     subnet_cidrs = ["172.18.0.0/24"]
     subnet_name ="my_subnet"
 }
-// ресурс yandex cloud  виртаульная сеть
+// ресурс yandex cloud  виртуальная сеть
 resource "yandex_vpc_network" "vnc"{
     // имя сети использует значение из locals
     name = local.vpc_name
